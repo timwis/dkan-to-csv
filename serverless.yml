@@ -1,0 +1,16 @@
+# For full config options, check the docs:
+#    docs.serverless.com
+
+service: dkan-to-csv
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+
+functions:
+  convert:
+    handler: handler.convert
+    events:
+      - http:
+          path: /
+          method: get
